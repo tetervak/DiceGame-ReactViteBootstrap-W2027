@@ -1,0 +1,25 @@
+
+h1 {
+    color: #4caf50;
+    text-shadow: 2px 2px 5px #81c784;
+}
+
+footer{
+    font-style: italic;
+}
+
+h2 {
+    color: #00bcd4;
+}
+
+.total-label{
+    color: #673ab7;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.total-number{
+    font-size: larger;
+    font-weight: bolder;
+    color: #ff9800;
+}
