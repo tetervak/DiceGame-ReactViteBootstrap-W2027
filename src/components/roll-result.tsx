@@ -1,4 +1,4 @@
-import type {RollData} from "../data/dice-data.ts";
+import type {RollData} from "../data/roll-data.ts";
 import {Stack} from "react-bootstrap";
 import {DiceDisplay} from "./dice-display.tsx";
 

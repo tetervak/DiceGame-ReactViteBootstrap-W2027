@@ -1,10 +1,10 @@
-function getRandomDiceValue(): number {
-    return 1 + Math.floor(6 * Math.random());
-}
-
 export interface RollData{
     values: number[];
     total: number;
+}
+
+function getRandomDiceValue(): number {
+    return 1 + Math.floor(6 * Math.random());
 }
 
 export function getRollData(numberOfDice: number): RollData{

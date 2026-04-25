@@ -1,7 +1,7 @@
 import {useDice} from "../hooks/use-dice.ts";
 import * as React from "react";
 import {RollResult} from "./roll-result.tsx";
-import {Button, Col, Container, Form, Row, Stack} from "react-bootstrap";
+import {Button, Col, Form, Row, Stack} from "react-bootstrap";
 import {CheckLg, XLg} from "react-bootstrap-icons";
 
 export function DiceRoller() {
@@ -13,8 +13,8 @@ export function DiceRoller() {
     }
 
     return (
-        <Container>
-            <h2 className="mt-4 mb-3">Roll the Dice</h2>
+        <>
+            <h2 className="mt-4 mb-3">Dice Roller</h2>
             {rollData && <RollResult data={rollData}/>}
             <Row className="align-items-baseline my-4">
                 <Col xs="auto">
@@ -34,7 +34,7 @@ export function DiceRoller() {
                 <Button onClick={rollDice} variant="primary">Roll Dice<CheckLg className="ms-2"/></Button>
                 <Button onClick={reset} variant="outline-warning">Reset<XLg className="ms-2"/></Button>
             </Stack>
-        </Container>
+        </>
     )
 
 }

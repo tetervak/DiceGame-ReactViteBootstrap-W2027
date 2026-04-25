@@ -1,12 +1,16 @@
 import {useState} from "react";
-import {getRollData, type RollData} from "../data/dice-data.ts";
+import {getRollData, type RollData} from "../data/roll-data.ts";
+import {useHistory} from "./use-history.ts";
 
 export function useDice() {
     const [rollData, setRollData] = useState<RollData | undefined>(undefined);
     const [numberOfDice, setNumberOfDice] = useState<number>(3);
+    const {addRollData} = useHistory();
 
     const rollDice = () => {
-        setRollData(getRollData(numberOfDice));
+        const data: RollData = getRollData(numberOfDice);
+        setRollData(data);
+        addRollData(data);
     };
 
     const reset = () => {
