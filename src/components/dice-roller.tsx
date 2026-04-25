@@ -32,7 +32,7 @@ export function DiceRoller() {
             </Row>
             <Stack direction="horizontal" gap={2} className="mb-3 ms-4">
                 <Button onClick={rollDice} variant="primary">Roll Dice<CheckLg className="ms-2"/></Button>
-                <Button onClick={reset} variant="outline-warning">Reset<XLg className="ms-2"/></Button>
+                {rollData && <Button onClick={reset} variant="outline-warning">Reset<XLg className="ms-2"/></Button>}
             </Stack>
         </>
     )
