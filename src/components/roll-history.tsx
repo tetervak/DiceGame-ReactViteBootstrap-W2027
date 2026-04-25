@@ -33,7 +33,9 @@ export function RollHistory(){
                 ))}
                 </tbody>
             </Table>
-            <Button onClick={clearHistory} variant="outline-danger ms-3">Clear History<XLg className="ms-2"/></Button>
+            <Button onClick={clearHistory} variant="outline-danger ms-3">
+                Clear History<XLg className="ms-2"/>
+            </Button>
         </>
     )
 }
