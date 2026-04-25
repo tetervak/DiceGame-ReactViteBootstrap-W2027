@@ -1,25 +1,15 @@
-import {type RollData, getRollData,} from "./data/dice-data";
-import {Button, Col, Container, Row, Stack} from "react-bootstrap";
-import {useState} from "react";
 import * as React from "react";
-import {RollResult} from "./components/roll-result.tsx";
-import {Form} from "react-bootstrap";
 import {Footer} from "./components/footer.tsx";
 import {Header} from "./components/header.tsx";
+import {RollResult} from "./components/roll-result.tsx";
+import {useDice} from "./hooks/use-dice.ts";
+import {Button, Col, Container, Row, Stack} from "react-bootstrap";
+import {Form} from "react-bootstrap";
 import {CheckLg, XLg} from "react-bootstrap-icons";
 
 function App() {
-    const [rollData, setRollData] = useState<RollData | undefined>(undefined);
-    const [numberOfDice, setNumberOfDice] = useState<number>(3);
 
-    const onRollDice = () => {
-        setRollData(getRollData(numberOfDice));
-    };
-
-    const onReset = () => {
-        setNumberOfDice(3);
-        setRollData(undefined);
-    };
+    const {rollData, rollDice, reset, numberOfDice, setNumberOfDice} = useDice();
 
     const onNumberOfDiceChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
         setNumberOfDice(parseInt(event.target.value))
@@ -46,8 +36,8 @@ function App() {
                     </Col>
                 </Row>
                 <Stack direction="horizontal" gap={2} className="mb-3 ms-4">
-                    <Button onClick={onRollDice} variant="primary">Roll Dice<CheckLg className="ms-2"/></Button>
-                    <Button onClick={onReset} variant="outline-warning">Reset<XLg className="ms-2"/></Button>
+                    <Button onClick={rollDice} variant="primary">Roll Dice<CheckLg className="ms-2"/></Button>
+                    <Button onClick={reset} variant="outline-warning">Reset<XLg className="ms-2"/></Button>
                 </Stack>
             </Container>
             <Footer name="Alex Tetervak"/>
