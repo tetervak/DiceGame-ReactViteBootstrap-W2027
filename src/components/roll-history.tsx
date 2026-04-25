@@ -2,25 +2,25 @@ import {useHistory} from "../hooks/use-history.ts";
 import {Button, Table} from "react-bootstrap";
 import {XLg} from "react-bootstrap-icons";
 
-export function RollHistory(){
+export function RollHistory() {
 
     const {historyData, clearHistory} = useHistory();
 
-    if(historyData.items.length === 0){
+    if (historyData.items.length === 0) {
         return null;
     }
 
-    return(
+    return (
         <>
             <h2 className="mt-4 mb-3">Roll History</h2>
             <Table striped bordered className="w-auto text-center">
                 <thead>
-                    <tr className="table-primary">
-                        <th>Count</th>
-                        <th>Dice Values</th>
-                        <th>Total</th>
-                        <th>Timestamp</th>
-                    </tr>
+                <tr className="table-primary">
+                    <th>Count</th>
+                    <th>Dice Values</th>
+                    <th>Total</th>
+                    <th>Timestamp</th>
+                </tr>
                 </thead>
                 <tbody>
                 {historyData.items.map((item, index) => (

@@ -9,7 +9,7 @@ export function DiceDisplay({values}: DiceDisplayProps) {
     return (
         <Stack direction="horizontal" gap={2}>
             {values.map(
-                (value: number, index: number) =>(
+                (value: number, index: number) => (
                     <OneDice side={value} key={`${index}_${value}`}/>
                 )
             )}

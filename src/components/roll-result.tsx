@@ -7,7 +7,7 @@ type RollResultProps = {
 }
 
 export function RollResult({data}: RollResultProps) {
-    return(
+    return (
         <Stack direction="vertical" gap={4} className="mb-3">
             <DiceDisplay values={data.values}/>
             <div>

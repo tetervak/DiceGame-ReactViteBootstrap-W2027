@@ -11,6 +11,6 @@ type OneDiceProps = {
     side: number;
 };
 
-export function OneDice({ side }: OneDiceProps) {
+export function OneDice({side}: OneDiceProps) {
     return <img src={sides[side - 1]} alt={"side " + side}></img>;
 }
